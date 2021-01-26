@@ -3,7 +3,6 @@
     <NodeTypeImplementation xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" targetNamespace="https://edmm.uni-stuttgart.de/nodetypeimplementations" name="PetClinic-IA" abstract="no" final="no" nodeType="ntyIgeneral:PetClinic">
         <ImplementationArtifacts>
             <ImplementationArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="configure" interfaceName="http://opentosca.org/interfaces/lifecycle" operationName="configure" artifactType="atyIgeneral:Script" artifactRef="ateIgeneral1:PetClinic-Configure"/>
-            <ImplementationArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="start" interfaceName="http://opentosca.org/interfaces/lifecycle" operationName="start" artifactType="atyIgeneral:Script" artifactRef="ateIgeneral1:PetClinic-Start"/>
         </ImplementationArtifacts>
     </NodeTypeImplementation>
 </Definitions>

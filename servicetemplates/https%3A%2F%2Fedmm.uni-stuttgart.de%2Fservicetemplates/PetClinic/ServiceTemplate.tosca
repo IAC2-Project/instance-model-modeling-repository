@@ -3,12 +3,20 @@
     <ServiceTemplate name="PetClinic" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="PetClinic">
         <documentation>PetClinic demonstrates the use of the Spring Boot framework. The PetClinic has an old and varied history dating right back to the beginning of the Spring Framework. It started life as a demonstration of nearly all the common things that you could do with Spring, back when it was possible to conceive of such a demonstration. These days it is a very small slice of what you could achieve, but the community has a soft spot for it, so it's nice to see it still going after all this time, so we hope you enjoy it too.</documentation>
         <TopologyTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="pet_clinic" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:x="347" winery:y="117">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="petclinic" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:x="379" winery:y="64">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <db_hostname>${MySQL_Database.public_address}</db_hostname>
+                        <db_user>${MySQL_Database.user}</db_user>
+                        <db_password>${MySQL_Database.password}</db_password>
+                        <db_schema_name>${MySQL_Database.schema_name}</db_schema_name>
+                    </Properties>
+                </Properties>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="war" artifactType="atyIgeneral:WAR" artifactRef="ateIgeneral1:PetClinic-App"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_db" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute" winery:x="796" winery:y="601">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_db" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute" winery:x="819" winery:y="635">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>
@@ -23,7 +31,7 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="dbms" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_DBMS" id="MySQL_DBMS" winery:x="797" winery:y="365">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="dbms" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_DBMS" id="MySQL_DBMS" winery:x="816" winery:y="370">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <port>3306</port>
@@ -31,7 +39,7 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="db" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database" winery:x="797" winery:y="68">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="db" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database" winery:x="814" winery:y="72">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <schema_name>petclinic</schema_name>
@@ -43,14 +51,14 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="sql" artifactType="atyIgeneral:SQL" artifactRef="ateIgeneral1:Petclinic-Schema"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="pet_clinic_tomcat" minInstances="1" maxInstances="1" type="ntyIgeneral:Tomcat" id="Tomcat" winery:x="347" winery:y="365">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="tomcat" minInstances="1" maxInstances="1" type="ntyIgeneral:Tomcat" id="Tomcat" winery:x="378" winery:y="377">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <port>8080</port>
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_app" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="346" winery:y="576">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_app" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="377" winery:y="637">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>

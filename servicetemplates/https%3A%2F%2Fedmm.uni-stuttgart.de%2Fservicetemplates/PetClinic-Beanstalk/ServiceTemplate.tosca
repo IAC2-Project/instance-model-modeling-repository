@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="winery-defs-for_steIgeneral2-PetClinic-Cloud">
+    <ServiceTemplate name="PetClinic-Cloud" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="PetClinic-Cloud">
+        <TopologyTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="app" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:x="727" winery:y="104">
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="app" artifactType="atyIgeneral:WAR" artifactRef="ateIgeneral1:PetClinic-App-H2"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="platform" minInstances="1" maxInstances="1" type="ntyIgeneral:AWS_Beanstalk" id="AWS_Beanstalk" winery:x="728" winery:y="365">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <region>eu-west-1</region>
+                        <archetype>java</archetype>
+                        <min_instances>1</min_instances>
+                        <max_instances>1</max_instances>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="PetClinic"/>
+                <TargetElement ref="AWS_Beanstalk"/>
+            </RelationshipTemplate>
+        </TopologyTemplate>
+    </ServiceTemplate>
+</Definitions>

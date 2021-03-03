@@ -59,6 +59,12 @@
   }, {
     "edmmType" : "saas",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SaaS"
+  }, {
+    "edmmType" : "software_component",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}NodeJS"
+  }, {
+    "edmmType" : "go",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Go"
   } ],
   "edmmTypeMapping" : [ {
     "edmmType" : "web_application",

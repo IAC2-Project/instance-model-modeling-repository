@@ -8,7 +8,7 @@ go get -v github.com/Masterminds/glide
 go get -u github.com/FiloSottile/gvt
 file_name=$(find . -type f -name '*.zip')
 mkdir -d ~/go/src/${WORKDIR}
-unzip file_name -d ~/go/src/${WORKDIR}
+unzip $file_name -d ~/go/src/${WORKDIR}
 cd ~/go/src/${WORKDIR}
 glide install
 gvt restore

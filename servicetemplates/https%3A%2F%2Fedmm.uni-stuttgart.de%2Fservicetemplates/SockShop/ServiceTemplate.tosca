@@ -2,7 +2,7 @@
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="winery-defs-for_steIgeneral2-SockShop">
     <ServiceTemplate name="SockShop" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="SockShop">
         <TopologyTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_0" winery:x="418" winery:y="390">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_0" winery:x="419" winery:y="475">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>
@@ -14,11 +14,16 @@
                 </Properties>
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral:NodeJS" id="NodeJS_0" winery:x="418" winery:y="114">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <port>8080</port>
+                    </properties>
+                </Properties>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Frontend"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="payment" minInstances="1" maxInstances="1" type="ntyIgeneral:Go" id="Go_0" winery:x="836" winery:y="219">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="payment" minInstances="1" maxInstances="1" type="ntyIgeneral:Go" id="Go_0" winery:x="847" winery:y="201">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <workdir>github.com/microservices-demo/payment</workdir>
@@ -30,7 +35,7 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Payment"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_1" winery:x="838" winery:y="393">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_1" winery:x="843" winery:y="471">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>
@@ -41,7 +46,7 @@
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="shipping" minInstances="1" maxInstances="1" type="ntyIgeneral:SpringBoot" id="SpringBoot_0" winery:x="1178" winery:y="109">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="shipping" minInstances="1" maxInstances="1" type="ntyIgeneral:SpringBoot" id="SpringBoot_0" winery:x="1182" winery:y="92">
                 <Properties>
                     <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
                         <port>8080</port>
@@ -51,7 +56,7 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="jar" artifactType="atyIgeneral:JAR" artifactRef="ateIgeneral1:SockShop-Shipping"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="1178" winery:y="297">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="1174" winery:y="459">
                 <Properties>
                     <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
                         <os_family>linux</os_family>

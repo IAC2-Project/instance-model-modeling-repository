@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://edmm.uni-stuttgart.de/nodetypes" id="winery-defs-for_ntyIgeneral-SpringBoot">
     <NodeType name="SpringBoot" abstract="no" final="no" targetNamespace="https://edmm.uni-stuttgart.de/nodetypes">
-        <winery:PropertiesDefinition elementname="properties" namespace="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
-            <winery:properties>
-                <winery:defaultValue>8080</winery:defaultValue>
-                <winery:key>port</winery:key>
-                <winery:type>xsd:string</winery:type>
-            </winery:properties>
-        </winery:PropertiesDefinition>
         <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:Web_Server"/>
         <Interfaces>
             <Interface name="http://opentosca.org/interfaces/lifecycle">

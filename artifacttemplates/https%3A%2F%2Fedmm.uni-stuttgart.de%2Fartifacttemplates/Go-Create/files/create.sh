@@ -1,5 +1,5 @@
 #!/bin/bash
-apt update
+apt -y update
 apt -y install wget curl git unzip
 # https://github.com/canha/golang-tools-install-script
 wget -q -O - https://raw.githubusercontent.com/canha/golang-tools-install-script/master/goinstall.sh | bash -s -- --version 1.7.6

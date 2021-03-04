@@ -7,6 +7,6 @@
                 <winery:type>xsd:integer</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>
-        <DerivedFrom xmlns:ntyIgeneral2="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral2:Software_Component"/>
+        <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:Software_Component"/>
     </NodeType>
 </Definitions>

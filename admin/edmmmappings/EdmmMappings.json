@@ -65,6 +65,9 @@
   }, {
     "edmmType" : "go",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Go"
+  }, {
+    "edmmType" : "web_server",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SpringBoot"
   } ],
   "edmmTypeMapping" : [ {
     "edmmType" : "web_application",

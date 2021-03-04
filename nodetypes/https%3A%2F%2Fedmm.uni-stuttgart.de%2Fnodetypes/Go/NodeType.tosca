@@ -10,13 +10,8 @@
                 <winery:key>workdir</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
-            <winery:properties>
-                <winery:defaultValue>8080</winery:defaultValue>
-                <winery:key>port</winery:key>
-                <winery:type>xsd:string</winery:type>
-            </winery:properties>
         </winery:PropertiesDefinition>
-        <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:Software_Component"/>
+        <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:Web_Server"/>
         <Interfaces>
             <Interface name="http://opentosca.org/interfaces/lifecycle">
                 <Operation name="create"/>

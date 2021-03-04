@@ -3,22 +3,27 @@
     <NodeType name="Compute" abstract="no" final="no" targetNamespace="https://edmm.uni-stuttgart.de/nodetypes">
         <winery:PropertiesDefinition elementname="properties" namespace="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
             <winery:properties>
+                <winery:defaultValue>linux</winery:defaultValue>
                 <winery:key>os_family</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
             <winery:properties>
+                <winery:defaultValue>ubuntu</winery:defaultValue>
                 <winery:key>machine_image</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
             <winery:properties>
+                <winery:defaultValue>large</winery:defaultValue>
                 <winery:key>instance_type</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
             <winery:properties>
+                <winery:defaultValue>empty</winery:defaultValue>
                 <winery:key>key_name</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
             <winery:properties>
+                <winery:defaultValue>empty</winery:defaultValue>
                 <winery:key>public_key</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>

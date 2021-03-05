@@ -68,6 +68,12 @@
   }, {
     "edmmType" : "web_server",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SpringBoot"
+  }, {
+    "edmmType" : "rabbitmq",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}RabbitMQ"
+  }, {
+    "edmmType" : "mom",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MOM"
   } ],
   "edmmTypeMapping" : [ {
     "edmmType" : "web_application",

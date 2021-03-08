@@ -13,6 +13,8 @@ go get -u github.com/FiloSottile/gvt
 file_name=$(find . -type f -name '*.zip')
 mkdir -p /root/go/src/${WORKDIR}
 unzip $file_name -d /root/go/src/${WORKDIR}
+images=$(find /root/go/src/${WORKDIR} -type d -name images)
+[[ ! -z "$images" ]] && cp -R $images .
 cd /root/go/src/${WORKDIR}
 glide install
 gvt restore

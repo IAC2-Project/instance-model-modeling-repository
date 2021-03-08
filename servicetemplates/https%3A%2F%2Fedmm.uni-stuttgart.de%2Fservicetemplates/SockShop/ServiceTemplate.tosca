@@ -105,7 +105,6 @@
                         <mongo_pass>${users-db.root_password}</mongo_pass>
                         <mongo_host>${users-db.public_address}</mongo_host>
                         <mongo_port>${users-db.port}</mongo_port>
-                        <HATEAOS>user</HATEAOS>
                         <USER_DATABASE>mongodb</USER_DATABASE>
                     </Properties>
                 </Properties>

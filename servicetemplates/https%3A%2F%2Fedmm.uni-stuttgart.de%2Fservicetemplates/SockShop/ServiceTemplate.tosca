@@ -268,7 +268,7 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="jar" artifactType="atyIgeneral:JAR" artifactRef="ateIgeneral1:SockShop-Orders"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_10" winery:x="1282" winery:y="858">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_10" winery:x="1282" winery:y="858">
                 <Properties>
                     <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
                         <os_family>linux</os_family>

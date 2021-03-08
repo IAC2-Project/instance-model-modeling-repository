@@ -105,6 +105,8 @@
                         <mongo_pass>${users-db.root_password}</mongo_pass>
                         <mongo_host>${users-db.public_address}</mongo_host>
                         <mongo_port>${users-db.port}</mongo_port>
+                        <HATEAOS>user</HATEAOS>
+                        <USER_DATABASE>mongodb</USER_DATABASE>
                     </Properties>
                 </Properties>
                 <DeploymentArtifacts>
@@ -136,7 +138,7 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Catalogue"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_5" winery:x="971" winery:y="228">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_5" winery:x="971" winery:y="228">
                 <Properties>
                     <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
                         <os_family>linux</os_family>
@@ -262,6 +264,8 @@
                         <shipping_port>${shipping.port}</shipping_port>
                         <payment_hostname>${payment.public_address}</payment_hostname>
                         <payment_port>${payment.port}</payment_port>
+                        <mongodb_hostname>${orders-db.public_address}</mongodb_hostname>
+                        <mongodb_port>${orders-db.port}</mongodb_port>
                     </Properties>
                 </Properties>
                 <DeploymentArtifacts>

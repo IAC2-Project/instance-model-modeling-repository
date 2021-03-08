@@ -10,6 +10,11 @@
                 <winery:key>root_password</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
+            <winery:properties>
+                <winery:defaultValue>8</winery:defaultValue>
+                <winery:key>version</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
         </winery:PropertiesDefinition>
         <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:DBMS"/>
         <Interfaces>

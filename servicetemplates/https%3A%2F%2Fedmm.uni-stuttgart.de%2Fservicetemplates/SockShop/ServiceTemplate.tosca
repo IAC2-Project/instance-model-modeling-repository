@@ -2,7 +2,7 @@
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="winery-defs-for_steIgeneral2-SockShop">
     <ServiceTemplate name="SockShop" targetNamespace="https://edmm.uni-stuttgart.de/servicetemplates" id="SockShop">
         <TopologyTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_0" winery:x="322" winery:y="219">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_0" winery:x="164" winery:y="217">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>
@@ -15,27 +15,35 @@
             </NodeTemplate>
             <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="front-end" minInstances="1" maxInstances="1" type="ntyIgeneral:NodeJS" id="NodeJS_0" winery:x="322" winery:y="89">
                 <Properties>
-                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                    <Properties xmlns="http://www.example.org">
                         <port>8080</port>
-                    </properties>
+                        <catalogue_hostname>${catalogue.public_address}</catalogue_hostname>
+                        <catalogue_port>${catalogue.port}</catalogue_port>
+                        <carts_hostname>${carts.public_address}</carts_hostname>
+                        <carts_port>${carts.port}</carts_port>
+                        <orders_hostname>${orders.public_address}</orders_hostname>
+                        <orders_port>${orders.port}</orders_port>
+                        <users_hostname>${users.public_address}</users_hostname>
+                        <users_port>${users.port}</users_port>
+                    </Properties>
                 </Properties>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Frontend"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="payment" minInstances="1" maxInstances="1" type="ntyIgeneral:Go" id="Go_0" winery:x="912" winery:y="219">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="payment" minInstances="1" maxInstances="1" type="ntyIgeneral:Go" id="Go_0" winery:x="1864" winery:y="530">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <workdir>github.com/microservices-demo/payment</workdir>
                         <entrypoint>github.com/microservices-demo/payment/cmd/paymentsvc</entrypoint>
-                        <port>8081</port>
+                        <port>9091</port>
                     </Properties>
                 </Properties>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Payment"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_1" winery:x="912" winery:y="357">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_1" winery:x="1864" winery:y="668">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>
@@ -46,18 +54,18 @@
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="shipping" minInstances="1" maxInstances="1" type="ntyIgeneral:SpringBoot" id="SpringBoot_0" winery:x="1183" winery:y="82">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="shipping" minInstances="1" maxInstances="1" type="ntyIgeneral:SpringBoot" id="SpringBoot_0" winery:x="1772" winery:y="260">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <port>8082</port>
-                        <rabbitmq_hostname>${RabbitMQ_0.public_address}</rabbitmq_hostname>
+                        <port>9090</port>
+                        <rabbitmq_hostname>${rabbitmq.public_address}</rabbitmq_hostname>
                     </Properties>
                 </Properties>
                 <DeploymentArtifacts>
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="jar" artifactType="atyIgeneral:JAR" artifactRef="ateIgeneral1:SockShop-Shipping"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="1181" winery:y="221">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="1772" winery:y="395">
                 <Properties>
                     <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
                         <os_family>linux</os_family>
@@ -68,7 +76,7 @@
                     </properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="rabbitmq" minInstances="1" maxInstances="1" type="ntyIgeneral:RabbitMQ" id="RabbitMQ_0" winery:x="1579" winery:y="87">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="rabbitmq" minInstances="1" maxInstances="1" type="ntyIgeneral:RabbitMQ" id="RabbitMQ_0" winery:x="2098" winery:y="263">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <port>5672</port>
@@ -76,7 +84,208 @@
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_3" winery:x="1577" winery:y="216">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_3" winery:x="2096" winery:y="392">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="users" minInstances="1" maxInstances="1" type="ntyIgeneral:Go" id="Go_1" winery:x="321" winery:y="757">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>5000</port>
+                        <entrypoint>main.go</entrypoint>
+                        <workdir>github.com/microservices-demo/user</workdir>
+                        <mongo_user>${users-db.root_user}</mongo_user>
+                        <mongo_pass>${users-db.root_password}</mongo_pass>
+                        <mongo_host>${users-db.public_address}</mongo_host>
+                        <mongo_port>${users-db.port}</mongo_port>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Users"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_4" winery:x="320" winery:y="893">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="catalogue" minInstances="1" maxInstances="1" type="ntyIgeneral:Go" id="Go_2" winery:x="966" winery:y="89">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>9000</port>
+                        <entrypoint>github.com/microservices-demo/catalogue/cmd/cataloguesvc</entrypoint>
+                        <workdir>github.com/microservices-demo/catalogue</workdir>
+                        <mysql_hostname>${catalogue-db.public_address}</mysql_hostname>
+                        <mysql_port>${catalogue-db.port}</mysql_port>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="src" artifactType="atyIgeneral:Archive" artifactRef="ateIgeneral1:SockShop-Catalogue"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_5" winery:x="967" winery:y="268">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="catalogue-dbms" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_DBMS" id="MySQL_DBMS_0" winery:x="1305" winery:y="273">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>3306</port>
+                        <root_password>edmm</root_password>
+                        <version>5.7</version>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_6" winery:x="1305" winery:y="429">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="catalogue-db" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database_0" winery:x="1307" winery:y="88">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <schema_name>socksdb</schema_name>
+                        <user>catalogue_user</user>
+                        <password>default_password</password>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="sql" artifactType="atyIgeneral:SQL" artifactRef="ateIgeneral1:SockShop-Catalogue-Data"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="carts" minInstances="1" maxInstances="1" type="ntyIgeneral:SpringBoot" id="SpringBoot_1" winery:x="653" winery:y="429">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>9001</port>
+                        <mongodb_hostname>${carts-db.public_address}</mongodb_hostname>
+                        <mongodb_port>${carts-db.port}</mongodb_port>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="jar" artifactType="atyIgeneral:JAR" artifactRef="ateIgeneral1:SockShop-Carts"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="carts-db" minInstances="1" maxInstances="1" type="ntyIgeneral:MongoDB" id="MongoDB_0" winery:x="967" winery:y="428">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>27017</port>
+                        <root_password>edmm</root_password>
+                        <root_user>edmm</root_user>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_7" winery:x="653" winery:y="628">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_8" winery:x="969" winery:y="628">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="users-dbms" minInstances="1" maxInstances="1" type="ntyIgeneral:MongoDB" id="MongoDB_1" winery:x="663" winery:y="906">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>27017</port>
+                        <root_password>edmm</root_password>
+                        <root_user>edmm</root_user>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_9" winery:x="663" winery:y="1042">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="users-db" minInstances="1" maxInstances="1" type="ntyIgeneral:MongoDB-Schema" id="MongoDB-Schema_0" winery:x="657" winery:y="758">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <schema_name>users</schema_name>
+                        <user>edmm</user>
+                        <password>edmm</password>
+                    </Properties>
+                </Properties>
+                <DeploymentArtifacts>
+                    <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="script" artifactType="atyIgeneral:Script" artifactRef="ateIgeneral1:SockShop-Users-Data"/>
+                </DeploymentArtifacts>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="orders" minInstances="1" maxInstances="1" type="ntyIgeneral:SpringBoot" id="SpringBoot_2" winery:x="1281" winery:y="693">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>9999</port>
+                        <shipping_hostname>${shipping.public_address}</shipping_hostname>
+                        <shipping_port>${shipping.port}</shipping_port>
+                        <payment_hostname>${payment.public_address}</payment_hostname>
+                        <payment_port>${payment.port}</payment_port>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="Compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_10" winery:x="1282" winery:y="858">
+                <Properties>
+                    <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
+                        <os_family>linux</os_family>
+                        <machine_image>ubuntu</machine_image>
+                        <instance_type>large</instance_type>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                    </properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="orders-db" minInstances="1" maxInstances="1" type="ntyIgeneral:MongoDB" id="MongoDB_2" winery:x="1869" winery:y="820">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port>27017</port>
+                        <root_password>edmm</root_password>
+                        <root_user>edmm</root_user>
+                    </Properties>
+                </Properties>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="compute" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_11" winery:x="1875" winery:y="983">
                 <Properties>
                     <properties xmlns="https://edmm.uni-stuttgart.de/nodetypes/propertiesdefinition/winery">
                         <os_family>linux</os_family>
@@ -91,17 +300,9 @@
                 <SourceElement ref="NodeJS_0"/>
                 <TargetElement ref="Compute_0"/>
             </RelationshipTemplate>
-            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_0">
-                <SourceElement ref="NodeJS_0"/>
-                <TargetElement ref="Go_0"/>
-            </RelationshipTemplate>
             <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_1">
                 <SourceElement ref="Go_0"/>
                 <TargetElement ref="Compute_1"/>
-            </RelationshipTemplate>
-            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_1">
-                <SourceElement ref="NodeJS_0"/>
-                <TargetElement ref="SpringBoot_0"/>
             </RelationshipTemplate>
             <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_2">
                 <SourceElement ref="SpringBoot_0"/>
@@ -114,6 +315,86 @@
             <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_2">
                 <SourceElement ref="SpringBoot_0"/>
                 <TargetElement ref="RabbitMQ_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_4">
+                <SourceElement ref="Go_1"/>
+                <TargetElement ref="Compute_4"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_5">
+                <SourceElement ref="Go_2"/>
+                <TargetElement ref="Compute_5"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_0">
+                <SourceElement ref="NodeJS_0"/>
+                <TargetElement ref="Go_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_6">
+                <SourceElement ref="MySQL_DBMS_0"/>
+                <TargetElement ref="Compute_6"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_7">
+                <SourceElement ref="MySQL_Database_0"/>
+                <TargetElement ref="MySQL_DBMS_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_1">
+                <SourceElement ref="Go_2"/>
+                <TargetElement ref="MySQL_Database_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_8">
+                <SourceElement ref="MongoDB_0"/>
+                <TargetElement ref="Compute_8"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_9">
+                <SourceElement ref="SpringBoot_1"/>
+                <TargetElement ref="Compute_7"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_3">
+                <SourceElement ref="SpringBoot_1"/>
+                <TargetElement ref="MongoDB_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_4">
+                <SourceElement ref="NodeJS_0"/>
+                <TargetElement ref="SpringBoot_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_5">
+                <SourceElement ref="NodeJS_0"/>
+                <TargetElement ref="Go_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_10">
+                <SourceElement ref="MongoDB_1"/>
+                <TargetElement ref="Compute_9"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_11">
+                <SourceElement ref="MongoDB-Schema_0"/>
+                <TargetElement ref="MongoDB_1"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_12">
+                <SourceElement ref="Go_1"/>
+                <TargetElement ref="MongoDB-Schema_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_13">
+                <SourceElement ref="SpringBoot_2"/>
+                <TargetElement ref="Compute_10"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_14">
+                <SourceElement ref="MongoDB_2"/>
+                <TargetElement ref="Compute_11"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_6">
+                <SourceElement ref="SpringBoot_2"/>
+                <TargetElement ref="MongoDB_2"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_7">
+                <SourceElement ref="SpringBoot_2"/>
+                <TargetElement ref="Go_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_8">
+                <SourceElement ref="SpringBoot_2"/>
+                <TargetElement ref="SpringBoot_0"/>
+            </RelationshipTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="ConnectsTo" type="tyIgeneral:ConnectsTo" id="con_ConnectsTo_9">
+                <SourceElement ref="NodeJS_0"/>
+                <TargetElement ref="SpringBoot_2"/>
             </RelationshipTemplate>
         </TopologyTemplate>
     </ServiceTemplate>

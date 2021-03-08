@@ -74,6 +74,12 @@
   }, {
     "edmmType" : "mom",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MOM"
+  }, {
+    "edmmType" : "mongodb",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MongoDB"
+  }, {
+    "edmmType" : "database",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MongoDB-Schema"
   } ],
   "edmmTypeMapping" : [ {
     "edmmType" : "web_application",

@@ -45,6 +45,7 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                         <schema_name>petclinic</schema_name>
                         <user>pc</user>
                         <password>petclinic</password>
+                        <version>8</version>
                     </Properties>
                 </Properties>
                 <DeploymentArtifacts>

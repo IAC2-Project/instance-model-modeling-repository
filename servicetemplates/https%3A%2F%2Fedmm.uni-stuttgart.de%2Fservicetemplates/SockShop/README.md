@@ -1,7 +1,8 @@
 
-## PetClinic Application
+## Sock Shop - A Microservices Demo Application
 
-> EDMM compliant model of the Spring PetClinic application.
+> Sock Shop simulates the user-facing part of an e-commerce website that sells socks.
+> It demonstrates how to implement and deploy multiple services using different programming languages ([more information](https://microservices-demo.github.io)).
 
 ---
 

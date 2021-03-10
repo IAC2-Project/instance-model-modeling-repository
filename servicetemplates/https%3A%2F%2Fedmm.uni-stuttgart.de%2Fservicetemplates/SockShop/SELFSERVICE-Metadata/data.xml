@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<selfservice:Application xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:ns0="http://docs.oasis-open.org/tosca/ns/simple/yaml/1.3" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org">
+    <selfservice:displayName>Sock Shop - A Microservices Demo Application</selfservice:displayName>
+    <selfservice:description>Sock Shop simulates the user-facing part of an e-commerce website that sells socks. It demonstrates how to implement and deploy multiple services using different programming languages (more information at https://microservices-demo.github.io).</selfservice:description>
+</selfservice:Application>

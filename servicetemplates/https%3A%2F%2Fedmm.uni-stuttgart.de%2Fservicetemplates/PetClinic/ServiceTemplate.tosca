@@ -22,12 +22,10 @@
                         <os_family>linux</os_family>
                         <machine_image>ubuntu</machine_image>
                         <instance_type>large</instance_type>
-                        <key_name>edmm</key_name>
-                        <public_key>-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0
-FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
-3j+skZ6UtW+5u09lHNsj6tQ51s1SPrCBkedbNf0Tp0GbMJDyR4e9T04ZZwIDAQAB
------END PUBLIC KEY-----</public_key>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                        <public_address>193.196.52.76</public_address>
+                        <private_key_path>~/.ssh/id_rsa</private_key_path>
                     </Properties>
                 </Properties>
             </NodeTemplate>
@@ -36,6 +34,7 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                     <Properties xmlns="http://www.example.org">
                         <port>3306</port>
                         <root_password>petclinic</root_password>
+                        <version>8</version>
                     </Properties>
                 </Properties>
             </NodeTemplate>
@@ -45,7 +44,6 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                         <schema_name>petclinic</schema_name>
                         <user>pc</user>
                         <password>petclinic</password>
-                        <version>8</version>
                     </Properties>
                 </Properties>
                 <DeploymentArtifacts>
@@ -65,12 +63,10 @@ FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
                         <os_family>linux</os_family>
                         <machine_image>ubuntu</machine_image>
                         <instance_type>large</instance_type>
-                        <key_name>edmm</key_name>
-                        <public_key>-----BEGIN PUBLIC KEY-----
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCqGKukO1De7zhZj6+H0qtjTkVxwTCpvKe4eCZ0
-FPqri0cb2JZfXJ/DgYSF6vUpwmJG8wVQZKjeGcjDOL5UlsuusFncCzWBQ7RKNUSesmQRMSGkVb1/
-3j+skZ6UtW+5u09lHNsj6tQ51s1SPrCBkedbNf0Tp0GbMJDyR4e9T04ZZwIDAQAB
------END PUBLIC KEY-----</public_key>
+                        <key_name>empty</key_name>
+                        <public_key>empty</public_key>
+                        <public_address>193.196.54.96</public_address>
+                        <private_key_path>~/.ssh/id_rsa</private_key_path>
                     </Properties>
                 </Properties>
             </NodeTemplate>

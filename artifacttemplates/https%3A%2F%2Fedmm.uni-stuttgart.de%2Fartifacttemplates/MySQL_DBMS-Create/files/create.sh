@@ -8,4 +8,7 @@ echo "mysql-server mysql-server/root_password password ${ROOT_PASSWORD}" | debco
 echo "mysql-server mysql-server/root_password_again password ${ROOT_PASSWORD}" | debconf-set-selections
 apt -y install mysql-server
 sed -i 's/.*bind-address.*=.*127\.0\.0\.1.*/bind-address = 0.0.0.0/g' /etc/mysql/mysql.conf.d/mysqld.cnf
+systemctl stop mysql
+systemctl daemon-reload
+systemctl enable mysql
 exit 0

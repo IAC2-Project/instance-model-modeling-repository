@@ -10,8 +10,6 @@ function check () {
 
 check systemctl
 if [[ $? -eq 0 ]]; then
-    systemctl daemon-reload
-    systemctl enable mysql
     systemctl start mysql
 else
     echo "INFO: Starting MySQL daemon in foreground"

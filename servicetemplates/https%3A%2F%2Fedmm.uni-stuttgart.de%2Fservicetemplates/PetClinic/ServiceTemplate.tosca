@@ -6,7 +6,7 @@
             <Tag name="participant:partnerA" value="http://localhost:5000"/>
         </Tags>
         <TopologyTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="petclinic" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:deployment-technology="terraform" winery:x="382" winery:y="102" winery:participant="partnerA">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="petclinic" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:deployment-technology="kubernetes" winery:x="382" winery:y="102" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <db_hostname>${db.public_address}</db_hostname>

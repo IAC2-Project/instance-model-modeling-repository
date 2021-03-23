@@ -6,7 +6,7 @@
             <Tag name="participant:partnerA" value="http://localhost:5000"/>
         </Tags>
         <TopologyTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="petclinic" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:x="382" winery:y="102">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="petclinic" minInstances="1" maxInstances="1" type="ntyIgeneral:PetClinic" id="PetClinic" winery:deployment-technology="terraform" winery:x="382" winery:y="102" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <db_hostname>${db.public_address}</db_hostname>
@@ -19,7 +19,7 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="war" artifactType="atyIgeneral:WAR" artifactRef="ateIgeneral1:PetClinic-App"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_db" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute" winery:x="822" winery:y="665">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_db" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute" winery:deployment-technology="terraform" winery:x="823" winery:y="665" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>
@@ -35,7 +35,7 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="provider" artifactType="atyIgeneral:Provider" artifactRef="ateIgeneral1:Ubuntu-OpenStack-Provider"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="dbms" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_DBMS" id="MySQL_DBMS" winery:x="819" winery:y="400">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="dbms" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_DBMS" id="MySQL_DBMS" winery:deployment-technology="ansible" winery:x="819" winery:y="400" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <port>3306</port>
@@ -44,7 +44,7 @@
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="db" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database" winery:x="817" winery:y="102">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="db" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database" winery:deployment-technology="ansible" winery:x="817" winery:y="102" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <schema_name>petclinic</schema_name>
@@ -56,14 +56,14 @@
                     <DeploymentArtifact xmlns:atyIgeneral="https://edmm.uni-stuttgart.de/artifacttypes" xmlns:ateIgeneral1="https://edmm.uni-stuttgart.de/artifacttemplates" name="sql" artifactType="atyIgeneral:SQL" artifactRef="ateIgeneral1:Petclinic-Schema"/>
                 </DeploymentArtifacts>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="tomcat" minInstances="1" maxInstances="1" type="ntyIgeneral:Tomcat" id="Tomcat" winery:x="381" winery:y="407">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="tomcat" minInstances="1" maxInstances="1" type="ntyIgeneral:Tomcat" id="Tomcat" winery:deployment-technology="kubernetes" winery:x="381" winery:y="407" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <port>8080</port>
                     </Properties>
                 </Properties>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_app" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:x="380" winery:y="667">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="ubuntu_app" minInstances="1" maxInstances="1" type="ntyIgeneral:Compute" id="Compute_2" winery:deployment-technology="kubernetes" winery:x="380" winery:y="667" winery:participant="partnerA">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <os_family>linux</os_family>

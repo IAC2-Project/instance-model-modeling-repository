@@ -15,5 +15,6 @@
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>
+        <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:RootComponent"/>
     </NodeType>
 </Definitions>

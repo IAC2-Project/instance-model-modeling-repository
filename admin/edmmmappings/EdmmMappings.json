@@ -36,9 +36,6 @@
     "edmmType" : "tomcat",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Tomcat"
   }, {
-    "edmmType" : "web_application",
-    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}PetClinic"
-  }, {
     "edmmType" : "aws_aurora",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}AWS_Aurora"
   }, {
@@ -60,14 +57,8 @@
     "edmmType" : "saas",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SaaS"
   }, {
-    "edmmType" : "software_component",
-    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}NodeJS"
-  }, {
     "edmmType" : "go",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}Go"
-  }, {
-    "edmmType" : "web_server",
-    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}SpringBoot"
   }, {
     "edmmType" : "rabbitmq",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}RabbitMQ"
@@ -80,6 +71,15 @@
   }, {
     "edmmType" : "mongodb_schema",
     "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}MongoDB-Schema"
+  }, {
+    "edmmType" : "docker_container",
+    "toscaType" : "{http://iac2.org/iacmf/nodetypes}DockerContainer"
+  }, {
+    "edmmType" : "docker_engine",
+    "toscaType" : "{http://iac2.org/iacmf/nodetypes}DockerEngine"
+  }, {
+    "edmmType" : "base",
+    "toscaType" : "{https://edmm.uni-stuttgart.de/nodetypes}RootComponent"
   } ],
-  "edmmTypes" : [ "auth0", "aws_aurora", "aws_beanstalk", "compute", "database", "dbaas", "dbms", "go", "mom", "mongodb", "mongodb_schema", "mysql_database", "mysql_dbms", "paas", "platform", "rabbitmq", "base", "saas", "software_component", "tomcat", "web_application", "web_server", "depends_on", "connects_to", "hosted_on" ]
+  "edmmTypes" : [ "auth0", "aws_aurora", "aws_beanstalk", "base", "compute", "connects_to", "database", "dbaas", "dbms", "depends_on", "go", "hosted_on", "mom", "mongodb", "mongodb_schema", "mysql_database", "mysql_dbms", "paas", "platform", "rabbitmq", "saas", "software_component", "tomcat", "web_application", "web_server", "docker_engine", "docker_container" ]
 }

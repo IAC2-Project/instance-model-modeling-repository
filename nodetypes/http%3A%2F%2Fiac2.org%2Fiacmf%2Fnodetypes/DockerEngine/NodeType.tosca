@@ -5,7 +5,7 @@
             <winery:properties>
                 <winery:derivedFromStatus>SELF</winery:derivedFromStatus>
                 <winery:derivedFromType xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes">ntyIgeneral2:DockerEngine</winery:derivedFromType>
-                <winery:key>engineUrl</winery:key>
+                <winery:key>dockerEngineUrl</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>

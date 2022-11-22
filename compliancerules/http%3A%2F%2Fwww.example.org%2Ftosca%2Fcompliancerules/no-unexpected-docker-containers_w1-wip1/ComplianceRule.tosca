@@ -2,19 +2,23 @@
 <Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://www.example.org/tosca/compliancerules" id="crIgeneral-no-unexpected-docker-containers_w1-wip1">
     <ComplianceRule name="no-unexpected-docker-containers_w1-wip1" id="no-unexpected-docker-containers_w1-wip1">
         <Identifier>
-            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerEngine" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerEngine" id="DockerEngine_0" winery:x="470" winery:y="323">
+            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerContainer" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerContainer" id="DockerContainer_0" winery:x="472" winery:y="188">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <engineUrl>${engineUrl}</engineUrl>
+                        <state/>
+                        <containerId/>
+                        <structuralStatus/>
+                        <componentName/>
                     </Properties>
                 </Properties>
                 <Capabilities/>
+                <Policies/>
             </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerContainer" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerContainer" id="DockerContainer_0" winery:x="472" winery:y="143">
+            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerEngine" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerEngine" id="DockerEngine_0" winery:x="464" winery:y="313">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <state>running</state>
-                        <containerId/>
+                        <componentName/>
+                        <dockerEngineUrl>value.equals(#ENGINE_URL)</dockerEngineUrl>
                     </Properties>
                 </Properties>
                 <Capabilities/>
@@ -25,20 +29,24 @@
             </RelationshipTemplate>
         </Identifier>
         <RequiredStructure>
-            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerEngine" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerEngine" id="DockerEngine_0" winery:x="598" winery:y="363">
-                <Properties>
-                    <DockerEngine xmlns="http://iac2.org/iacmf/nodetypes">
-                        <engineUrl/>
-                    </DockerEngine>
-                </Properties>
-                <Capabilities/>
-            </NodeTemplate>
-            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerContainer" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerContainer" id="DockerContainer_0" winery:x="596" winery:y="208">
+            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerContainer" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerContainer" id="DockerContainer_0" winery:x="543" winery:y="318">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
-                        <state>running</state>
+                        <componentName/>
+                        <state/>
                         <containerId/>
-                        <structuralStatus>expected</structuralStatus>
+                        <structuralStatus>value.equalsIgnoreCase('EXPECTED')</structuralStatus>
+                    </Properties>
+                </Properties>
+                <Capabilities/>
+                <Policies/>
+                <DeploymentArtifacts/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes" name="DockerEngine" minInstances="1" maxInstances="1" type="ntyIgeneral2:DockerEngine" id="DockerEngine_0" winery:x="532" winery:y="445">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <componentName/>
+                        <dockerEngineUrl/>
                     </Properties>
                 </Properties>
                 <Capabilities/>

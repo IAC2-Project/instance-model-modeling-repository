@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Definitions xmlns="http://docs.oasis-open.org/tosca/ns/2011/12" xmlns:winery="http://www.opentosca.org/winery/extensions/tosca/2013/02/12" xmlns:selfservice="http://www.eclipse.org/winery/model/selfservice" xmlns:testwineryopentoscaorg="http://test.winery.opentosca.org" targetNamespace="http://www.example.org/tosca/compliancerules" id="crIgeneral-no-unexpected-database-users">
+    <ComplianceRule name="no-unexpected-database-users" id="no-unexpected-database-users">
+        <Identifier>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="MySQL_Database" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database_0" winery:x="602" winery:y="267">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <schema_name/>
+                        <user/>
+                        <password/>
+                        <componentName/>
+                    </Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="MySQL_DBMS" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_DBMS" id="MySQL_DBMS_0" winery:x="595" winery:y="442">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <port/>
+                        <root_password/>
+                        <componentName>value.equals(#DBMS_NAME)</componentName>
+                        <version/>
+                    </Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+            <RelationshipTemplate xmlns:tyIgeneral="https://edmm.uni-stuttgart.de/relationtypes" name="HostedOn" type="tyIgeneral:HostedOn" id="con_HostedOn_0">
+                <SourceElement ref="MySQL_Database_0"/>
+                <TargetElement ref="MySQL_DBMS_0"/>
+            </RelationshipTemplate>
+        </Identifier>
+        <RequiredStructure>
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="MySQL_Database" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database_0" winery:x="524" winery:y="207">
+                <Properties>
+                    <Properties xmlns="http://www.example.org">
+                        <schema_name/>
+                        <user>#ALLOWED_USERS.containsAll(value)</user>
+                        <password/>
+                        <componentName/>
+                    </Properties>
+                </Properties>
+                <Capabilities/>
+            </NodeTemplate>
+        </RequiredStructure>
+    </ComplianceRule>
+</Definitions>

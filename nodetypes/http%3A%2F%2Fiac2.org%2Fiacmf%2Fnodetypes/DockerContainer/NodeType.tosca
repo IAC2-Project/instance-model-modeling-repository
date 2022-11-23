@@ -17,8 +17,7 @@
             </winery:properties>
             <winery:properties>
                 <winery:derivedFromStatus>SELF</winery:derivedFromStatus>
-                <winery:derivedFromType xmlns:ntyIgeneral2="http://iac2.org/iacmf/nodetypes">ntyIgeneral2:DockerContainer</winery:derivedFromType>
-                <winery:key>structuralStatus</winery:key>
+                <winery:key>structuralState</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
         </winery:PropertiesDefinition>

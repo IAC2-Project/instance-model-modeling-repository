@@ -7,7 +7,7 @@
                     <Properties xmlns="http://www.example.org">
                         <state/>
                         <containerId/>
-                        <structuralStatus/>
+                        <structuralState/>
                         <componentName/>
                     </Properties>
                 </Properties>
@@ -35,7 +35,7 @@
                         <componentName/>
                         <state/>
                         <containerId/>
-                        <structuralStatus>value.equalsIgnoreCase('EXPECTED')</structuralStatus>
+                        <structuralState>value.equalsIgnoreCase('EXPECTED')</structuralState>
                     </Properties>
                 </Properties>
                 <Capabilities/>

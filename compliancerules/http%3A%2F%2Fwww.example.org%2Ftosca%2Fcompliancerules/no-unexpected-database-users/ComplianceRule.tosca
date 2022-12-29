@@ -30,13 +30,14 @@
             </RelationshipTemplate>
         </Identifier>
         <RequiredStructure>
-            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="MySQL_Database" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database_0" winery:x="524" winery:y="207">
+            <NodeTemplate xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" name="MySQL_Database" minInstances="1" maxInstances="1" type="ntyIgeneral:MySQL_Database" id="MySQL_Database_0" winery:x="656" winery:y="415">
                 <Properties>
                     <Properties xmlns="http://www.example.org">
                         <schema_name/>
-                        <user>#ALLOWED_USERS.containsAll(value)</user>
+                        <user/>
                         <password/>
                         <componentName/>
+                        <users>#ALLOWED_USERS.containsAll(value)</users>
                     </Properties>
                 </Properties>
                 <Capabilities/>

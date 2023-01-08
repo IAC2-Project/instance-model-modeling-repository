@@ -44,6 +44,13 @@
                 <winery:key>private_key_path</winery:key>
                 <winery:type>xsd:string</winery:type>
             </winery:properties>
+            <winery:properties>
+                <winery:defaultValue>empty</winery:defaultValue>
+                <winery:derivedFromStatus>SELF</winery:derivedFromStatus>
+                <winery:derivedFromType xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes">ntyIgeneral:Compute</winery:derivedFromType>
+                <winery:key>public_address</winery:key>
+                <winery:type>xsd:string</winery:type>
+            </winery:properties>
         </winery:PropertiesDefinition>
         <DerivedFrom xmlns:ntyIgeneral="https://edmm.uni-stuttgart.de/nodetypes" typeRef="ntyIgeneral:RootComponent"/>
         <Interfaces/>

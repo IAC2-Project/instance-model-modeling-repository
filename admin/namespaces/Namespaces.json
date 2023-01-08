@@ -95,6 +95,14 @@
     "patternCollection" : false,
     "secureCollection" : false
   },
+  "http://iac2.org/iacmf/service-templates" : {
+    "namespace" : "http://iac2.org/iacmf/service-templates",
+    "prefix" : "teIgeneral",
+    "readableName" : "",
+    "generatedNamespace" : false,
+    "patternCollection" : false,
+    "secureCollection" : false
+  },
   "http://opentosca.org/servicetemplates" : {
     "namespace" : "http://opentosca.org/servicetemplates",
     "prefix" : "servicetemplates",
